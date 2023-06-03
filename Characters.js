@@ -13,6 +13,18 @@ function Characters(data) {
     }
 
     this.takeDamage = function(attackScoreDamage) {
+
+        let totalAttackScore = attackScoreDamage.reduce((accumulatedAttackScore, diceValue) => {
+            return accumulatedAttackScore + diceValue;
+        })
+        this.health -= totalAttackScore
+
+        if(this.health < 0) {
+            this.health = 0
+            this.isDead = true
+        }
+        console.log(this.isDead)
+
         console.log(`${this.name}: ${attackScoreDamage} damage`)
     }
     
