@@ -4,9 +4,10 @@ import Characters from './Characters.js'
 document.getElementById('attack-button').addEventListener('click', attack)
 
 function attack() {
-    console.log("click")
     wizard.getDiceHtml()
     orc.getDiceHtml()
+    wizard.takeDamage(orc.currentDiceScore)
+    orc.takeDamage(wizard.currentDiceScore)
     render()
 }
 

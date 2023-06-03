@@ -11,6 +11,10 @@ function Characters(data) {
             return `<div class="dice">${num}</div>`
         }).join('')
     }
+
+    this.takeDamage = function(attackScoreDamage) {
+        console.log(`${this.name}: ${attackScoreDamage} damage`)
+    }
     
     this.getCharacter = function() {
         const {elementId, name, avatar, health, diceCount, diceArray} = this
