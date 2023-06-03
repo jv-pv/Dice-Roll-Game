@@ -1,4 +1,4 @@
-import {getDiceRollArray} from './utils.js'
+import {getDiceRollArray, getDicePlaceholderHtml} from './utils.js'
 
 function Characters(data) {
     Object.assign(this, data)
