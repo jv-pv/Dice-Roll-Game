@@ -6,7 +6,6 @@ const charactersData = {
         health: 60,
         diceCount: 3,
         currentDiceScore: [],
-        isDead: false
     },
 
     monster: {
@@ -16,7 +15,6 @@ const charactersData = {
         health: 10,
         diceCount: 1,
         currentDiceScore: [],
-        isDead: false
     }
 }
 
