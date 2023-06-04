@@ -1,9 +1,13 @@
 import {getDiceRollArray, getDicePlaceholderHtml} from './utils.js'
 
+const getPercentage = (remainingHealth, maximumHealth) => (remainingHealth / maximumHealth) * 100
+
 function Characters(data) {
     Object.assign(this, data)
 
     this.diceArray = getDicePlaceholderHtml(this.diceCount)
+
+    this.maxHealth = this.health
     
     this.getDiceHtml = function() {
         this.currentDiceScore = getDiceRollArray(this.diceCount)
@@ -19,10 +23,11 @@ function Characters(data) {
         })
         this.health -= totalAttackScore
 
-        if(this.health < 0) {
+        if(this.health <= 0) {
             this.health = 0
             this.isDead = true
         }
+        console.log(getPercentage(this.health, this.maxHealth))
     }
     
     this.getCharacter = function() {
