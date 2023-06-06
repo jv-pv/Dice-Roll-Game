@@ -27,7 +27,6 @@ function Characters(data) {
     }
 
     this.takeDamage = function(attackScoreDamage) {
-
         let totalAttackScore = attackScoreDamage.reduce((accumulatedAttackScore, diceValue) => {
             return accumulatedAttackScore + diceValue;
         })

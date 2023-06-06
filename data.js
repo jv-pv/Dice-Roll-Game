@@ -3,14 +3,14 @@ const charactersData = {
         name: "Wizard",
         avatar: "./images/wizard.png",
         health: 60,
-        diceCount: 4,
+        diceCount: 3,
         currentDiceScore: [],
     },
     orc: {
         name: "Orc",
         avatar: "./images/orc.png",
         health: 15,
-        diceCount: 2,
+        diceCount: 1,
         currentDiceScore: [],
     },
     demon: {

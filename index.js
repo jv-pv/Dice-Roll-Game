@@ -44,9 +44,11 @@ function endGame() {
     setTimeout(() => {
         document.body.innerHTML = `
         <div class="end-game">
-            <h2>Game Over</h2>    
-            <h3>${endMessage}</h3>
-            <p>${endEmoji}</p>
+            <div class="end-game-text">
+                <h2>Game Over</h2>    
+                <h3>${endMessage}</h3>
+                <p>${endEmoji}</p>
+            </div>
         </div>`
     }, 2500);
 
