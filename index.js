@@ -15,16 +15,20 @@ function attack() {
     monster.getDiceHtml()
     wizard.takeDamage(monster.currentDiceScore)
     monster.takeDamage(wizard.currentDiceScore)
+    render()
+
     if (wizard.isDead) {
         endGame()
     } else if (monster.isDead) {
         if (monstersArray.length > 0) {
-            monster = getNewMonster()
+            setTimeout(()=>{
+                monster = getNewMonster()
+                render()
+            }, 1500)
         } else {
             endGame()
         }
     }
-    render()
 }
 
 function endGame() {
@@ -34,12 +38,15 @@ function endGame() {
 
     const endEmoji = wizard.health > 0 ? "🔮" : "💀"
 
-    document.body.innerHTML = `
-    <div class="end-game">
-        <h2>Game Over</h2>    
-        <h3>${endMessage}</h3>
-        <p>${endEmoji}</p>
-    </div>`
+    setTimeout(() => {
+        document.body.innerHTML = `
+        <div class="end-game">
+            <h2>Game Over</h2>    
+            <h3>${endMessage}</h3>
+            <p>${endEmoji}</p>
+        </div>`
+    }, 2500);
+
 }
 
 function render() {
