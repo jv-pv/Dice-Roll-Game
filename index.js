@@ -2,7 +2,7 @@ import charactersData from './data.js'
 import Characters from './Characters.js'
 
 const monstersArray = ["orc", "demon", "goblin"]
-
+const attackBtn = document.querySelector('button')
 document.getElementById('attack-button').addEventListener('click', attack)
 
 function getNewMonster() {
@@ -20,8 +20,10 @@ function attack() {
     if (wizard.isDead) {
         endGame()
     } else if (monster.isDead) {
+        attackBtn.disabled = true
         if (monstersArray.length > 0) {
             setTimeout(()=>{
+                attackBtn.disabled = false
                 monster = getNewMonster()
                 render()
             }, 1500)
@@ -32,6 +34,7 @@ function attack() {
 }
 
 function endGame() {
+    attackBtn.disabled = true
     const endMessage = wizard.health === 0 && monster.health === 0 ? "No Victors"
     : wizard.health > 0 ? "The Wizard Wins"
     : `The ${monster.name} wins`;
