@@ -1,6 +1,5 @@
-import {getDiceRollArray, getDicePlaceholderHtml} from './utils.js'
+import {getDiceRollArray, getDicePlaceholderHtml, getPercentage} from './utils.js'
 
-const getPercentage = (remainingHealth, maximumHealth) => (remainingHealth / maximumHealth) * 100
 
 function Characters(data) {
     Object.assign(this, data)
@@ -42,7 +41,7 @@ function Characters(data) {
     }
     
     this.getCharacter = function() {
-        const {elementId, name, avatar, health, diceCount, diceArray} = this
+        const { name, avatar, health, diceArray} = this
         const healthBar = this.getHealthBarHtml()
         return `
         <div class="character-card">
